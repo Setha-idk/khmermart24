@@ -36,7 +36,7 @@ class PageController extends Controller
 
         // Store the data (example: create a new user)
         // Replace this with your actual logic (e.g., saving to a database)
-        $user = new \App\Models\User;
+        $user = new User;
         $user->name = $validated['name'];
         $user->email = $validated['email'];
         $user->password = bcrypt($validated['password']);
