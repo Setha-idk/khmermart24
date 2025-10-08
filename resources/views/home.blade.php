@@ -18,7 +18,7 @@
                     super deal
                 </p>
 
-                <a href="login-register.blade.php" class="header__top-action">
+                <a href="register" class="header__top-action">
                     login / sign up
                 </a>
             </div>
@@ -47,7 +47,7 @@
                     </li> 
 
                     <li class="nav__item">
-                        <a href="login-register.blade.php" class="nav__link">login</a>
+                        <a href="register" class="nav__link">login</a>
                     </li> 
                 </ul>
             </div>

@@ -8,15 +8,15 @@
 <body>
     <div class="container">
         <div class="form-box login">
-            <form>
+            <form method="POST" action="{{ route('login') }}">
+                @csrf
                 <h1>login</h1>
                 <div class="input-box">
-                    <input type="text" placeholder="Username" name="name" required>
+                    <input type="text" placeholder="Email" name="email" required>
                     <i class='bx bxs-user'></i>
                 </div>
-
                 <div class="input-box">
-                    <input type="password" placeholder="password" name="password" required>
+                    <input type="password" id="password" placeholder="password" name="password" required>
                     <i class='bx bxs-lock'></i>
                 </div>
                 <div class="forgot-link">
@@ -48,11 +48,19 @@
 
         <div class="form-box register">
             <!-- Registration form -->
-            <form method="POST" action="/register">
+            <form method="POST" action="{{ route('register') }}">
                 @csrf <!-- CSRF protection -->
                 <h1>register</h1>
                 <div class="input-box">
-                    <input type="text" placeholder="Username" name="name" required>
+                    <input type="text" placeholder="Username" name="username" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder="First Name" name="first_name" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder="Last Name" name="last_name" required>
                     <i class='bx bxs-user'></i>
                 </div>
                 <div class="input-box">
@@ -62,6 +70,7 @@
                 <div class="input-box">
                     <input type="password" placeholder="password" name="password" required>
                     <i class='bx bxs-lock'></i>
+                    <div :messages="$errors->get('password')" class="mt-2"></div>
                 </div>
                 <div class="forgot-link">
                     <a href="#">Forgot password?</a>
